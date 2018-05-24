@@ -50,7 +50,9 @@ filter_sd<-function(dataset){
   exp2=exprs(dataset)
   sds=rowSds(exp2)
   m=median(sds)
-  hist(sds,breaks=50,col="mistyrose")
+  hist(sds,breaks=50,col="mistyrose",main = "Histograma dos desvios padrões",
+       xlab = "Desvios padrões",
+       ylab = "Frequência")
   abline(v=m,col="blue",lwd=4,lty=2)
   abline(v=m*2,col="red",lwd=4,lty=2)
   legend("topright",legend=c("mediana","dobro da mediana"), bty="n",fill = c("blue","red"))
@@ -130,7 +132,7 @@ clusterhierarch<-function(dataset,res){
     corr=cor(cl,method="pearson")
     d=as.dist(1-corr)
     cl.hier <- hclust(d)
-    plot(cl.hier, main = "Clustering Hier�rquico")
+    plot(cl.hier, main = "Clustering Hier?rquico")
 }
 
 dist.fun = function(x) {
